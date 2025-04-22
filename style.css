@@ -1,0 +1,73 @@
+/* Reset default browser styles and set black background */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: black;
+    overflow: hidden;
+    color: white;
+    font-family: sans-serif;
+    cursor: pointer; /* Makes the whole page feel clickable */
+}
+
+/* Flex centering for the body */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* --- Click Prompt Styles --- */
+#click-prompt {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 3vw;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+
+    z-index: 10;
+    animation: flashWarning 2.5s infinite ease-in-out;
+    background-color: black; /* Ensures full black screen before interaction */
+}
+
+/* Flashing Animation */
+@keyframes flashWarning {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+/* --- Video Container Styles --- */
+.video-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    z-index: 1;
+}
+
+/* --- Video Element --- */
+video {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border: none;
+    outline: none;
+}
